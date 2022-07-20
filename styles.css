@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    background: grey;
+}
+
+.shell {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 7% / 5%;
+    background: darkslategrey;
+    padding: 12px;
+    width: 360px;
+}
+
+.display {
+    position: relative;
+    margin: 5px;
+    margin-bottom: 12px;
+    border-radius: 4% / 12%;
+    background: pink;
+    height: 98px;
+    color: #590730;
+    padding: 30px;
+}
+
+#displayText {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    left:30px;
+    text-align: right;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+    font-style: bolder;
+    overflow-wrap: anywhere;
+    user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.operator, .allClear, .number, .equals {
+    margin: 5px;
+    border: 2px solid transparent;
+    border-radius: 18% / 20%;
+    height: 71px;
+    width: 76px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 71px;
+    font-family: Arial;
+    font-size: 32px;
+    font-weight: bolder;
+    color: darkslategrey;
+    user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.operator:hover, .allClear:hover, .number:hover, .equals:hover {
+    filter: brightness(85%);
+}
+
+.operator {
+    background: lightblue;
+}
+
+.allClear {
+    background: orange;
+}
+
+.number {
+    background: lightgreen;
+}
+
+.equals {
+    background: #ffffa0;
+}
+
+#openParenthesis, #closeParenthesis {
+    line-height: 65px;   
+}
