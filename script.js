@@ -94,16 +94,18 @@ document.addEventListener("keydown", e => {
             display.textContent += div.innerHTML;
             exp[0] += e.key;
         }
-        else if(e.shiftKey) {
-            if(e.key === "=") {
-                display.textContent += "+";
-                exp[0] += "+";
-            }
-            else if(e.key === "8") {
-                const div = document.getElementById("multiply");
-                display.textContent += div.innerHTML;
-                exp[0] += "*";
-            }
+        else if(e.key === "+") {
+            display.textContent += e.key;
+            exp[0] += e.key;
+        }
+        else if(e.key === "*") {
+            const div = document.getElementById("multiply");
+            display.textContent += div.innerHTML;
+            exp[0] += e.key;
+        }
+        else if(e.key === "%") {
+            display.textContent += e.key;
+            exp[0] += e.key;
         }
     }
 });
