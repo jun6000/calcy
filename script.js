@@ -1,6 +1,6 @@
 /*
 TODO
-enable click and type support (try using input instead of p)
+enable hover effect when using keyboard input
 cleanup code
 */
 
@@ -56,6 +56,10 @@ box.addEventListener("click", e => {
 
 // Input from keyboard
 document.addEventListener("keydown", e => {
+    if(exp[0] === "Error!") {
+        exp = ["", ""];
+        display.textContent = "";
+    }
     if(e.key === "Backspace") {
         display.textContent = display.textContent.slice(0, display.textContent.length - 1);
         exp[0] = display.textContent;
