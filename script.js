@@ -89,7 +89,7 @@ document.addEventListener("keydown", e => {
     }
     else {
         exp[1] = "";
-        if(e.key === "-") {
+        if(e.key === "+" || e.key === "-" || e.key === "%") {
             display.textContent += e.key;
             exp[0] += e.key;
         }
@@ -98,17 +98,9 @@ document.addEventListener("keydown", e => {
             display.textContent += div.innerHTML;
             exp[0] += e.key;
         }
-        else if(e.key === "+") {
-            display.textContent += e.key;
-            exp[0] += e.key;
-        }
         else if(e.key === "*") {
             const div = document.getElementById("multiply");
             display.textContent += div.innerHTML;
-            exp[0] += e.key;
-        }
-        else if(e.key === "%") {
-            display.textContent += e.key;
             exp[0] += e.key;
         }
     }
