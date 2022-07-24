@@ -1,8 +1,3 @@
-/*
-TODO
-enable hover effect when using keyboard input
-*/
-
 window.onload = init;
 
 // Function definitions
