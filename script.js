@@ -5,6 +5,8 @@ function init() {
     const box = document.getElementsByClassName("shell")[0];
     const display = document.getElementById("displayText");
     let exp = ["", ""];
+    /* exp[0] == expression to be solved, exp[1] == state variable that
+       shows if exp[0] holds the solution or not. */
 
     box.addEventListener("click", e => { handleButtonClick(e, display, exp); }, false);
     document.addEventListener("keydown", e => { handleKeyDown(e, display, exp); }, false);
@@ -13,7 +15,7 @@ function init() {
 function handleButtonClick(e, display, exp) { // Input by clicking buttons
     if (e.target) {
         if (display.textContent.length >= 36) display.textContent = "..."; // Display overflow
-        if (exp[0] === "Error!") clear(display, exp);
+        if (exp[0] === "Error!") clear(display, exp); // Calculation error
         if (e.target.matches("div.number")) inputNumber(e, display, exp, "click");
         else if (e.target.matches("div.operator")) inputOperator(e, display, exp, "click");
         else if (e.target.matches("div.allClear")) clear(display, exp);
@@ -23,7 +25,7 @@ function handleButtonClick(e, display, exp) { // Input by clicking buttons
 
 function handleKeyDown(e, display, exp) { // Input from keyboard
     if (display.textContent.length >= 36) display.textContent = "..."; // Display overflow
-    if (exp[0] === "Error!") clear(display, exp);
+    if (exp[0] === "Error!") clear(display, exp); // Calculation error
     if (e.key === "Backspace") delLastChar(display, exp);
     else if (e.key === "Enter") solve(display, exp);
     else if (/^\d+$/.test(e.key) || e.key === ".") inputNumber(e, display, exp, "key");
