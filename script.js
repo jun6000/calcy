@@ -28,10 +28,7 @@ function handleButtonClick(e, display, exp) { // Input by clicking buttons
 
 function handleKeyDown(e, display, exp) { // Input from keyboard
     if (exp[0] === "Error!") clear(display, exp);
-    if (e.key === "Backspace") {
-        display.textContent = display.textContent.slice(0, display.textContent.length - 1);
-        exp[0] = display.textContent;
-    }
+    if (e.key === "Backspace") delLastChar(display, exp);
     else if (e.key === "Enter") solve(display, exp);
     else if (/^\d+$/.test(e.key) || e.key === ".") inputNumber(e, display, exp, "key");
     else if (/^[+\-*%/()]$/.test(e.key)) inputOperator(e, display, exp, "key");
@@ -88,4 +85,9 @@ function solve(display, exp) {
         exp[0] = display.textContent;
         exp[1] = "ans";
     }
+}
+
+function delLastChar(display, exp) {
+    display.textContent = display.textContent.slice(0, display.textContent.length - 1);
+    exp[0] = display.textContent;
 }
