@@ -27,6 +27,7 @@ function handleButtonClick(e, display, exp) { // Input by clicking buttons
 }
 
 function handleKeyDown(e, display, exp) { // Input from keyboard
+    if (display.textContent.length >= 36) display.textContent = "..."; // Display overflow
     if (exp[0] === "Error!") clear(display, exp);
     if (e.key === "Backspace") delLastChar(display, exp);
     else if (e.key === "Enter") solve(display, exp);
