@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@font-face {
+    font-family: 'VT323';
+    src: url('./font/VT323-Regular.eot');
+    src: url('./font/VT323-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./font/VT323-Regular.woff2') format('woff2'),
+        url('./font/VT323-Regular.woff') format('woff'),
+        url('./font/VT323-Regular.ttf') format('truetype'),
+        url('./font/VT323-Regular.svg#VT323-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
     background: grey;
