@@ -5,7 +5,7 @@ function init() {
     const box = document.getElementsByClassName("shell")[0];
     const display = document.getElementById("displayText");
     let exp = ["", ""];
-    /* exp[0] == expression to be solved, exp[1] == state variable that
+    /* exp[0] -> expression to be solved, exp[1] -> state variable that
        shows if exp[0] holds the solution or not. */
 
     box.addEventListener("click", e => { handleButtonClick(e, display, exp); }, false);
@@ -75,10 +75,11 @@ function inputOperator(e, display, exp, inputType) {
 function solve(display, exp) {
     if (exp[0] !== "") {
         try {
-            display.textContent = math.evaluate(exp[0]);
+            display.textContent = window.evaluate(exp[0]);
         }
         catch(e) {
             display.textContent = "Error!";
+            console.log(e);
         }
         exp[0] = display.textContent;
         exp[1] = "ans";
